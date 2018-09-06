@@ -9,7 +9,7 @@ import org.springframework.data.redis.core.RedisTemplate;
  */
 public class DistributedLockFactory {
 
-    public DistributedLock getDistributedLock(String resourceName, RedisTemplate redisTemplate) {
+    public static DistributedLock getDistributedLock(String resourceName, RedisTemplate redisTemplate) {
         if (isEmpty(resourceName)) {
             throw new IllegalArgumentException("resource name can not be null");
         }

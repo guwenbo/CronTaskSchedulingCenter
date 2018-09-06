@@ -122,7 +122,7 @@ public class CronTaskAnalysisService {
 
             CronTaskMsgEntity entity = latestCronTaskMap.get(key);
 
-            Runnable task = new KafkaCronTask(kafkaTemplate, entity.getTaskMsg());
+            Runnable task = new KafkaCronTask(entity.getTaskMsg(), kafkaTemplate, redisTemplate);
 
             ScheduledFuture future = threadPoolTaskScheduler.schedule(task, new CronTrigger(entity.getCron()));
 

@@ -31,3 +31,4 @@ dependencies {
     compile('org.springframework.kafka:spring-kafka')
     testCompile('org.springframework.boot:spring-boot-starter-test')
 }
+
